@@ -1,9 +1,12 @@
+<% if @road_station_list.present? %>
+
 <table class="table table-striped">
     <tr>
       <th>道の駅</th>
       <th>道の駅URL</th>
     </tr>
   <% @road_station_list.each do |station| %>
+
   <tr>
     <td><%= station[:name] %></td>
     <td><%= link_to station[:name]+"の道の駅情報" , station[:url] , target:"_blank" if station[:url] != nil %></td>
@@ -12,3 +15,4 @@
   
 </table>
 <%#https://www.virment.com/rails-sortable-table/ 参考にしてテーブル作成%>
+<% end %>

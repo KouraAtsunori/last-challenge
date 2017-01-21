@@ -18,14 +18,6 @@
   </div>
 </div>
 
-
-<%# 地域のセレクト %>
-<%= form_tag(root_url) do  %>
-<%= collection_select(:area, :region_id, @areas, :id, :area) %>
-<%= hidden_field(:user, :id) %>
-<%= submit_tag("決定") %>
-<% end %>
-
 <%#= @road_station_list.all %>
 <%#= form_for(@xxxx) %>
   <%#= f.collection_select(:region_id, @areas, :id, :area) %>

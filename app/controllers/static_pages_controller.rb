@@ -6,6 +6,7 @@ class StaticPagesController < ApplicationController
       @posting = current_user.postings.build if logged_in?
       @areas = Region.all #地域の情報を取得
       @feed_items = current_user.feed_items.includes(:user).order(created_at: :desc)
+      @region_id = 0
     end
   end
   
@@ -108,7 +109,8 @@ def get_roadstation_list(region)
       @posting = current_user.postings.build if logged_in?
       @areas = Region.all #地域の情報を取得
       @feed_items = current_user.feed_items.includes(:user).order(created_at: :desc)
-    end     
+    end
+    @region_id = params[:area][:region_id]
      render 'home'
  end
   

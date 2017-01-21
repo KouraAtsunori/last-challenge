@@ -15,10 +15,8 @@
       <%= render 'shared/feed' %>
     </aside>
     <div class="col-md-8">
-
-      <section>
         <%= form_tag(controller:'static_pages', action:'get_road_station') do  %>
-        <%= collection_select(:area, :region_id, @areas, :id, :area) %>
+        <%= collection_select(:area, :region_id, @areas, :id, :area, selected:@region_id) %>
         <%= hidden_field(:user, :id) %>
         <%= submit_tag("決定") %>
         <% end %>
@@ -27,7 +25,6 @@
         <%#= render 'areas/new' %>
         
         <%= render 'list' %>
-      </section>
     </div>
   </div>
 <% else %>
