@@ -1,0 +1,6 @@
+  <%# 地域のセレクト %>
+<%= form_tag('/areas') do  %>
+<%= collection_select(:area, :region_id, @areas, :id, :area) %>
+<%= hidden_field(:user, :id) %>
+<%= submit_tag("決定") %>
+<% end %>

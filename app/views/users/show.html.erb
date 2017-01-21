@@ -1,0 +1,33 @@
+<div class="row">
+  <aside class="col-md-4">
+    <session class="user_info">
+        <h1>
+          <%= gravatar_for @user %>
+          <%= @user.name %>
+         </h1>
+    </session>
+  </aside>
+  <div class="col-md-8">
+    <%= render 'follow_form' if logged_in? %>
+    <% if @user.postings.any? %>
+      <h3>投稿一覧(<%= @user.postings.count %>)</h3>
+      <ol class="postings">
+        <%= render @postings %>
+      </ol>
+    <% end %>
+  </div>
+</div>
+
+
+<%# 地域のセレクト %>
+<%= form_tag(root_url) do  %>
+<%= collection_select(:area, :region_id, @areas, :id, :area) %>
+<%= hidden_field(:user, :id) %>
+<%= submit_tag("決定") %>
+<% end %>
+
+<%#= @road_station_list.all %>
+<%#= form_for(@xxxx) %>
+  <%#= f.collection_select(:region_id, @areas, :id, :area) %>
+  <%#= f.submit
+<%# end %>

@@ -1,0 +1,8 @@
+<%= form_for(@posting) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.text_area :content, placeholder: "こちらに投稿文を記入してください" %>
+  </div>
+  <%= f.submit "投稿", class: "btn btn-primary" %>
+<% end %>
+
